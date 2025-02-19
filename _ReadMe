@@ -1,6 +1,39 @@
 
 
-Codigo para ser usado com CI/CD com ElastickBeanstalk
+Codigo para ser usado com CI/CD com ElastickBeanstalk com Node.js 22.
 
 Referencia:
 https://aws.amazon.com/getting-started/hands-on/create-continuous-delivery-pipeline/module-four/?e=gs2020&p=cicd-three
+
+
+##Step 1 > 
+Fork the project no link:
+git clone https://github.com/YOUR-USERNAME/aws-elastic-beanstalk-express-js-sample
+
+
+##Step 2 > Criar aplicacao no Beanstalk
+
+Environment : Web server environment 
+Appname: DevOpsGettingStarted
+Plataforma: Node.js
+
+
+##Step 3 > Build Project
+Conectar ao Git
+ProjectName: Build-DevOpsGettingStarted
+
+Switch to Editor:
+
+version: 0.2
+phases:
+    build:
+        commands:
+            - npm i --save
+artifacts:
+    files:
+        - '**/*'
+
+
+##Step 4 > Criar pipeline
+
+Name: Pipeline-DevOpsGettingStarted.
